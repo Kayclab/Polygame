@@ -9,7 +9,7 @@
                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.33" r="2.67" stroke="#9333ea" stroke-width="1.33" fill="none" /><path d="M2.67 13.33a5.33 5.33 0 0110.67 0" stroke="#9333ea" stroke-width="1.33" stroke-linecap="round" fill="none" /></svg>
                 <span class="text-[10px] font-bold uppercase tracking-widest text-purple-600">Portal Evaluasi</span>
             </div>
-            <h1 class="font-mono font-bold text-3xl text-zinc-900 leading-tight">Evaluasi Staf</h1>
+            <h1 class="font-mono font-bold text-3xl text-zinc-900 leading-tight">Evaluasi Staff</h1>
             <p class="font-mono text-sm text-gray-400 mt-1 max-w-lg leading-relaxed">Penilaian kinerja anonim pada skala 10-100. Mode evaluasi kolektif memastikan konsistensi di seluruh tim.</p>
         </div>
 
