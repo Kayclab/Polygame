@@ -65,8 +65,12 @@
             class="fixed lg:static z-30 w-64 h-full bg-white border-r border-zinc-100 flex flex-col flex-shrink-0 -translate-x-full lg:translate-x-0 transition-transform duration-300">
             {{-- Logo --}}
             <div class="flex items-center gap-2.5 px-6 py-8">
-                <div class="w-9 h-9 bg-purple-600/10 rounded-2xl flex justify-center items-center">
-                    <i data-lucide="layout-grid" class="w-5 h-5 text-purple-600"></i>
+                <div class="w-9 h-9 rounded-2xl flex justify-center items-center overflow-hidden bg-purple-600/10">
+                    <img 
+                        src="{{ asset('images/Logo_poly.jpeg') }}" 
+                        alt="Poly Games Cafe Logo"
+                        class="w-full h-full object-cover"
+                    >
                 </div>
                 <span class="text-zinc-900 text-base font-bold font-mono leading-7">Poly Games Cafe</span>
             </div>
