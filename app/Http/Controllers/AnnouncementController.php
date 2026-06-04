@@ -48,7 +48,15 @@ class AnnouncementController extends Controller
         // 3. DATA ANNOUNCEMENT
         $announcements = Announcement::with('karyawan')->latest()->get();
 
-        $pinjamans = Pinjaman::all(); 
+        // 4. DATA PINJAMAN BULAN INI
+        // Dashboard hanya menghitung pinjaman yang disetujui pada bulan berjalan.
+        // Jadi ketika masuk bulan baru, nilai pinjaman otomatis kembali 0.
+        $pinjamans = Pinjaman::where('status', 'approved')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->get();
+
+        $totalPinjamanBulanan = $pinjamans->sum('total');
 
         $avgEvaluasi = Evaluasi::avg('skor_total') ?? 0;
 
@@ -77,6 +85,7 @@ class AnnouncementController extends Controller
             'systemHealth',
             'systemStatus',
             'pinjamans',
+            'totalPinjamanBulanan',
             'avgEvaluasi',
             'totalLemburPending'
         ));
