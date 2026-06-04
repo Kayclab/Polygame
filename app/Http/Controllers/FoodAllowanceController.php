@@ -9,19 +9,28 @@ use App\Models\Pinjaman;
 
 class FoodAllowanceController extends Controller
 {
-    public function index() {
-        // 1. Batas maksimal kasbon (Allowance Cap)
-        $allowanceCap = 300000; 
+    public function index()
+    {
+        // 1. Batas maksimal kasbon per bulan
+        $allowanceCap = 300000;
 
-        // 2. Ambil data staff dan hitung akumulasi kasbon approved dari database
+        // 2. Ambil bulan dan tahun saat ini
+        $currentMonth = now()->month;
+        $currentYear  = now()->year;
+
+        // 3. Ambil data staff dan hitung akumulasi kasbon approved hanya bulan ini
+        // Jadi ketika masuk bulan baru, total peminjaman otomatis tampil dari 0 lagi.
         $staffRanking = karyawan::where('role', 'staff')
             ->get()
-            ->map(function ($karyawan) {
+            ->map(function ($karyawan) use ($currentMonth, $currentYear) {
                 $totalSpent = Pinjaman::where('karyawan_id', $karyawan->id_kry)
                     ->where('status', 'approved')
+                    ->whereMonth('created_at', $currentMonth)
+                    ->whereYear('created_at', $currentYear)
                     ->sum('total');
 
                 $karyawan->total_spent = $totalSpent;
+
                 return $karyawan;
             })
             ->sortByDesc('total_spent');
