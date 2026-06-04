@@ -369,14 +369,14 @@
             {{-- Aksi --}}
             <div class="flex items-center gap-3 pt-1">
                 <button type="button" onclick="closeUploadModal()"
-                    class="flex-1 h-12 rounded-2xl outline outline-1 outline-zinc-200 text-zinc-700 text-xs font-black font-inter uppercase leading-4 tracking-wide hover:bg-zinc-50 transition-colors">
+                    class="w-32 h-12 flex-shrink-0 rounded-2xl outline outline-1 outline-zinc-200 text-zinc-700 text-xs font-black font-inter uppercase leading-4 tracking-wide hover:bg-zinc-50 transition-colors">
                     Batal
                 </button>
-                
+
                 <button type="button" onclick="submitUploadForm()"
-                    class="flex-1 h-12 bg-purple-600 rounded-2xl shadow-[0px_8px_30px_rgba(147,51,234,0.35)] text-white text-xs font-black font-inter uppercase leading-4 tracking-wide hover:bg-purple-700 transition-colors flex items-center justify-center gap-2">
-                    <i data-lucide="send" class="w-4 h-4"></i>
-                    Publikasikan Sekarang
+                    class="flex-1 min-w-0 h-12 px-5 bg-purple-600 rounded-2xl shadow-[0px_8px_30px_rgba(147,51,234,0.35)] text-white text-[11px] font-black font-inter uppercase leading-4 tracking-wide hover:bg-purple-700 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i data-lucide="send" class="w-4 h-4 flex-shrink-0"></i>
+                    <span class="truncate">Publikasikan Sekarang</span>
                 </button>
             </div>
         </form>
@@ -461,14 +461,14 @@
             {{-- Bagian Tombol Aksi --}}
             <div class="flex items-center gap-3 pt-1">
                 <button type="button" onclick="closeEditModal()"
-                    class="flex-1 h-12 rounded-2xl outline outline-1 outline-zinc-200 text-zinc-700 text-xs font-black font-inter uppercase leading-4 tracking-wide hover:bg-zinc-50 transition-colors">
+                    class="w-32 h-12 flex-shrink-0 rounded-2xl outline outline-1 outline-zinc-200 text-zinc-700 text-xs font-black font-inter uppercase leading-4 tracking-wide hover:bg-zinc-50 transition-colors">
                     Batal
                 </button>
                 {{-- UBAH: Tombol utama menggunakan bg-purple-600 dan bayangan bayang ungu (shadow-[0px_8px_30px_rgba(147,51,234,0.35)]) --}}
                 <button type="button" onclick="submitEditForm()"
-                    class="flex-1 h-12 bg-purple-600 rounded-2xl shadow-[0px_8px_30px_rgba(147,51,234,0.35)] text-white text-xs font-black font-inter uppercase leading-4 tracking-wide hover:bg-purple-700 transition-colors flex items-center justify-center gap-2">
-                    <i data-lucide="check-circle" class="w-4 h-4"></i>
-                    Simpan Perubahan
+                    class="flex-1 min-w-0 h-12 px-5 bg-purple-600 rounded-2xl shadow-[0px_8px_30px_rgba(147,51,234,0.35)] text-white text-[11px] font-black font-inter uppercase leading-4 tracking-wide hover:bg-purple-700 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0"></i>
+                    <span class="truncate">Simpan Perubahan</span>
                 </button>
             </div>
         </form>
